@@ -1,0 +1,58 @@
+<!-- public/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Job Portal</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Job Portal</h1>
+      <nav>
+        <a href="/my-applications.html">My Applications</a>
+      </nav>
+    </header>
+
+    <section class="search">
+      <input id="searchInput" placeholder="Search by title, company or location" />
+      <button id="searchBtn">Search</button>
+      <button id="clearBtn">Clear</button>
+    </section>
+
+    <section id="jobsList" class="jobs"></section>
+  </div>
+
+  <!-- Apply Modal -->
+  <div id="applyModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3 id="modalJobTitle">Apply for</h3>
+      <form id="applyForm">
+        <input type="hidden" id="jobId" />
+        <label>
+          Full name
+          <input id="appName" required />
+        </label>
+        <label>
+          Email
+          <input id="appEmail" type="email" required />
+        </label>
+        <label>
+          Resume (paste text)
+          <textarea id="appResume" required></textarea>
+        </label>
+        <label>
+          Cover letter (optional)
+          <textarea id="appCover"></textarea>
+        </label>
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
